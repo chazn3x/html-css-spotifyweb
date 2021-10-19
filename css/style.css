@@ -4,3 +4,50 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background-color: rgb(20,25,34);
+}
+
+
+/* app body */
+.container {
+    width: 100%;
+    display: flex;
+}
+
+/* side bar */
+.sidebar {
+    width: 50px;
+    background-color: #000;
+}
+
+/* content */
+main {
+}
+.main-top {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(9,11,19);
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 60px;
+    background-color: rgb(40,40,40);
+}
+
+
+
+
+/* debug */
+.debug .container {
+    /* background-color: #fff; */
+    height: calc(100vh - 60px);
+}
+.debug main {
+    /* background-color: grey; */
+    width: calc(100% - 50px);
+}
+.debug .main-top {
+}
