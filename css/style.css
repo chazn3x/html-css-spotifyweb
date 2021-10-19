@@ -25,6 +25,10 @@ h4 {
     padding-top: 5px;
     font-size: 11px;
 }
+.sidebar .menu li:hover span,
+.playlist li:hover {
+    color: white;
+}
 
 /* standard view (x-small) */
 
@@ -47,12 +51,21 @@ h4 {
     margin: 8px;
     cursor: pointer;
 }
+#big-logo {
+    display: none;
+}
 .sidebar .menu li {
     padding: 8px;
     cursor: pointer;
 }
-.sidebar-top img {
+.sidebar .menu span {
+    display: none;
+}
+.sidebar .menu img {
     width: 34px;
+}
+.playlist {
+    display: none;
 }
 .sidebar-bottom div {
     text-align: center;
@@ -65,6 +78,9 @@ h4 {
     width: 25px;
     background-color: grey;
     border-radius: 100%;
+}
+.sidebar-bottom span {
+    display: none;
 }
 
 
@@ -128,7 +144,7 @@ main {
     align-items: center;
     text-align: center;
 }
-/* margine da togliere */
+/* margine laterale da togliere da una card */
 @media screen and (max-width: 767px) {
     .card:nth-of-type(even) {
         margin-right: 0;
@@ -243,12 +259,14 @@ footer {
     color: white;
 }
 .player-commands .play-circle {
-    padding: 1px;
+    height: 22px;
+    width: 22px;
     border: 2px solid white;
     border-radius: 100%;
 }
 .player-bar {
     width: 100%;
+    max-width: 400px;
     height: 50%;
     display: flex;
     justify-content: space-between;
@@ -290,7 +308,6 @@ footer {
 
 
 
-
 /* small view */
 @media screen and (min-width: 576px) {
     
@@ -298,9 +315,98 @@ footer {
     .sidebar {
         width: 200px;
     }
+    .sidebar .logo {
+        margin: 12px;
+    }
+    #small-logo {
+        display: none;
+    }
+    #big-logo {
+        display: block;
+        width: 130px;
+    }
+    .sidebar .menu li, .playlist, .sidebar-bottom {
+        padding: 6px 20px;
+    }
+    .sidebar .menu li:first-of-type {
+        padding-left: 17px;
+        border-left: 3px solid yellow;
+    }
+    .sidebar .menu img {
+        width: 25px;
+        vertical-align: middle;
+    }
+    .sidebar .menu span {
+        display: inline;
+        margin-left: 5px;
+        font-size: 15px;
+    }
+    .sidebar .menu li:first-of-type span {
+        color: white;
+    }
+    .playlist {
+        display: block;
+    }
+    .playlist h3 {
+        text-transform: uppercase;
+        font-size: 17px;
+        cursor: default;
+    }
+    .new-playlist {
+        display: flex;
+        align-items: center;
+        margin-top: 7px;
+        font-size: 14px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .new-playlist span:first-of-type {
+        display: block;
+        height: 30px;
+        width: 30px;
+        background-color: lightgrey;
+        color: black;
+        font-size: 25px;
+        font-weight: 500;
+        text-align: center;
+        margin-right: 8px;
+    }
+    .new-playlist:hover span:first-of-type {
+        background-color: #fff;
+    }
+    .new-playlist:hover span:last-of-type {
+        color: white;
+    }
+    .playlist-list {
+        overflow-y: auto;
+        height: calc(100vh - 410px);
+    }
+    .playlist-list li {
+        list-style: none;
+        padding: 5px 0;
+        font-size: 14px;
+        cursor: pointer;
+    }
     .sidebar-bottom div {
         text-align: left;
         padding: 5px 0;
+        display: flex;
+        align-items: center;
+    }
+    .sidebar-bottom div:first-of-type {
+        border-bottom: 1px solid grey;
+        margin-bottom: 5px;
+    }
+    .sidebar-bottom span {
+        display: inline-block;
+        margin-left: 7px;
+    }
+    .sidebar-bottom div:first-of-type span {
+        font-size: 11px;
+    }
+    .sidebar-bottom div:last-of-type span {
+        font-size: 13px;
+        color: white;
     }
 
     /* content */
@@ -318,24 +424,41 @@ footer {
     }
 
     /* footer */
-    .song-favorite {
+    .song-playing .song-art {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+    .song-info h4 {
+        font-size: 15px;
+    }
+    .song-info h5 {
+        font-size: 12px;
+    }
+    .footer-left .song-favorite {
         padding: 0;
     }
-    .song-favorite i {
+    .footer-left .song-favorite i {
         display: inline-block;
         padding: 0;
         padding-left: 10px;
+        font-size: 17px;
+    }
+    .footer-right .options i {
+        font-size: 17px;
+        padding-right: 10px;
     }
 }
 
 /* medium view */
 @media screen and (min-width: 768px) {
-    
+
+    /* content */
     .card {
         width: calc((100vw - 260px) / 4);
         margin-right: 10px;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
         .card:nth-of-type(4) {
             margin-right: 0;
         }
@@ -348,12 +471,26 @@ footer {
 /* large view */
 @media screen and (min-width: 992px) {
     
+    /* content */
     .card {
-        width: 150px;
+        width: calc((100vw - 280px) / 6);
+        max-width: 181px;
         margin-right: 10px;
     }
+    .card:last-of-type {
+        margin-right: 0;
+    }
     .card .music-art {
-        height: 150px;
+        height: calc((100vw - 280px) / 6);
+        max-height: 181px;
+    }
+
+    /* footer */
+    footer {
+        padding: 0 10px;
+    }
+    .footer-left .song-playing, .footer-right .options {
+        max-width: 240px;
     }
 }
 
