@@ -7,10 +7,23 @@
     font-family: 'Ubuntu', sans-serif;
 }
 body {
+    min-width: 320px;
     background-color: rgb(20,25,34);
 }
 a {
     text-decoration: none;
+}
+h2 {
+    color: white;
+}
+h3 {
+    color: white;
+    padding-top: 10px;
+    font-size: 13px;
+}
+h4 {
+    padding-top: 5px;
+    font-size: 11px;
 }
 
 /* standard view (x-small) */
@@ -83,11 +96,10 @@ main {
 }
 .main-body {
     height: 100%;
-    padding-top: 80px;
+    padding: 80px 15px 0;
     overflow-y: auto;
 }
 .music-menu ul {
-    padding-top: 10px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -100,7 +112,65 @@ main {
     font-weight: 700;
     padding: 16px 7px;
 }
-
+.section-title {
+    padding: 25px 0;
+}
+.section-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    width: calc((100vw - 90px) / 2);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+@media screen and (max-width: 767px) {
+    .card:nth-of-type(even) {
+        margin-right: 0;
+    }
+}
+.card .music-art {
+    width: 100%;
+    height: calc((100vw - 90px) / 2);
+    background-size: cover;
+}
+#recent-cube1 {
+    background-image: url(../img/metal_lifting.jpg);
+}
+#recent-cube2 {
+    background-image: url(../img/stranger.jpeg);
+}
+#recent-cube3 {
+    background-image: url(../img/aquietplace.jpeg);
+}
+#recent-cube4 {
+    background-image: url(../img/split.jpeg);
+}
+#recent-cube5 {
+    background-image: url(../img/cure.jpeg);
+}
+#recent-cube6 {
+    background-image: url(../img/sinister.jpeg);
+}
+#user-cube1 {
+    background-image: url(../img/radar.jpeg);
+}
+#user-cube2 {
+    background-image: url(../img/mixdaily.jpeg);
+}
+.popular .music-art {
+    border-radius: 100%;
+}
+#artist-circle1 {
+    background-image: url(../img/youg.jpeg);
+}
+#artist-circle2 {
+    background-image: url(../img/einaudi.jpeg);
+}
 
 /* footer */
 footer {
@@ -132,16 +202,41 @@ footer {
     .main-top #upgrade-btn {
         right: 310px;
     }
+    .card {
+        width: calc((100vw - 340px) / 2);
+    }
+    .card .music-art {
+        height: calc((100vw - 340px) / 2);
+    }
 }
 
 /* medium view */
 @media screen and (min-width: 768px) {
     
+    .card {
+        width: calc((100vw - 360px) / 4);
+        margin-right: 10px;
+    }
+    @media screen and (max-width: 992px) {
+        .card:nth-of-type(4) {
+            margin-right: 0;
+        }
+    }
+    .card .music-art {
+        height: calc((100vw - 360px) / 4);
+    }
 }
 
 /* large view */
 @media screen and (min-width: 992px) {
     
+    .card {
+        width: 150px;
+        margin-right: 10px;
+    }
+    .card .music-art {
+        height: 150px;
+    }
 }
 
 
@@ -160,3 +255,11 @@ footer {
 /* .debug .music-menu {
     background-color: #fff;
 } */
+.debug .card {
+    /* background-color: skyblue; */
+    /* border: 1px solid black; */
+    /* height: 300px; */
+}
+.debug .music-art {
+    background-color: lightyellow;
+}
