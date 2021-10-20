@@ -40,6 +40,7 @@ i {
     color: white;
 }
 
+
 /* standard view (x-small) */
 
 /* app body */
@@ -47,6 +48,7 @@ i {
     width: 100%;
     height: calc(100vh - 60px);
     display: flex;
+    overflow-y: auto;
 }
 
 /* side bar */
@@ -86,9 +88,11 @@ i {
 }
 .sidebar-bottom #install img {
     width: 20px;
+    margin-right: 3px;
 }
 .sidebar-bottom #user img {
-    width: 25px;
+    padding: 2px;
+    width: 20px;
     background-color: grey;
     border-radius: 100%;
 }
@@ -117,8 +121,8 @@ main {
     color: white;
     line-height: 16px;
     text-transform: uppercase;
-    padding: 10px 25px;
-    border-radius: 19px;
+    padding: 8px 27px;
+    border-radius: 18px;
     border: 1px solid grey;
     background-color: black;
     cursor: pointer;
@@ -126,7 +130,7 @@ main {
 .main-top #upgrade-btn:hover {
     scale: 1.05;
     border: 2px solid white;
-    border-radius: 21px;
+    border-radius: 20px;
 }
 .main-body {
     height: 100%;
@@ -170,7 +174,7 @@ main {
     flex-wrap: wrap;
 }
 .card {
-    width: calc((100vw - 90px) / 2);
+    width: calc(((100vw - (100vw - 100%)) - 10px) / 2);
     margin-right: 10px;
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -196,7 +200,7 @@ main {
 }
 .card .music-art {
     width: 100%;
-    height: calc((100vw - 90px) / 2);
+    height: calc((100vw - 95px) / 2);
     background-size: cover;
     cursor: pointer;
     border-radius: 4px;
@@ -207,7 +211,7 @@ main {
     border-radius: 4px;
 }
 .music-art .layover {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.3);
     width: 100%;
     height: 100%;
     display: flex;
@@ -603,10 +607,10 @@ footer {
         right: 210px;
     }
     .card {
-        width: calc((100vw - 240px) / 2);
+        width: calc(((100vw - (100vw - 100%)) - 10px) / 2);
     }
     .card .music-art {
-        height: calc((100vw - 240px) / 2);
+        height: calc((100vw - 245px) / 2);
     }
 
     /* footer */
@@ -641,7 +645,7 @@ footer {
 
     /* content */
     .card {
-        width: calc((100vw - 260px) / 4);
+        width: calc(((100vw - (100vw - 100%)) - 30px) / 4);
         margin-right: 10px;
     }
     @media screen and (max-width: 991px) {
@@ -650,7 +654,7 @@ footer {
         }
     }
     .card .music-art {
-        height: calc((100vw - 260px) / 4);
+        height: calc((100vw - 265px) / 4);
     }
     .card i {
         font-size: 16px;
@@ -666,7 +670,7 @@ footer {
     
     /* content */
     .card {
-        width: calc((100vw - 280px) / 6);
+        width: calc(((100vw - (100vw - 100%)) - 50px) / 6);
         max-width: 181px;
         margin-right: 10px;
     }
@@ -674,7 +678,7 @@ footer {
         margin-right: 0;
     }
     .card .music-art {
-        height: calc((100vw - 280px) / 6);
+        height: calc((100vw - 285px) / 6);
         max-height: 181px;
     }
 
