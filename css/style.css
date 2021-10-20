@@ -35,7 +35,8 @@ i {
 .main-body .music-menu li:hover a,
 .footer-left h5:hover,
 .footer-left i:hover,
-.card h4:hover {
+.card h4:hover,
+.player-commands i:hover {
     color: white;
 }
 
@@ -118,12 +119,14 @@ main {
     text-transform: uppercase;
     padding: 10px 25px;
     border-radius: 19px;
-    border: 1px solid white;
+    border: 1px solid grey;
     background-color: black;
     cursor: pointer;
 }
 .main-top #upgrade-btn:hover {
     scale: 1.05;
+    border: 2px solid white;
+    border-radius: 21px;
 }
 .main-body {
     height: 100%;
@@ -151,13 +154,13 @@ main {
     width: 40px;
     height: 2px;
     background-color: rgb(28,215,96);
-    display: none;
+    opacity: 0;
 }
 .music-menu li:first-of-type .underline {
-    display: block;
+    opacity: 1;
 }
 .music-menu li:hover .underline {
-    display: block;
+    opacity: 1;
 }
 .section-title {
     padding: 25px 0;
@@ -169,19 +172,21 @@ main {
 .card {
     width: calc((100vw - 90px) / 2);
     margin-right: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: 0s;
+    transition: all 0s background-color 0.2s;
+    border-radius: 5px;
+}
+.card .music-art:hover {
+    scale: 0.98;
 }
 .card h3,
 .card h4 {
     cursor: pointer;
-}
-.card h4:hover {
-    text-decoration: underline;
 }
 /* margine laterale da togliere da una card */
 @media screen and (max-width: 767px) {
@@ -194,50 +199,63 @@ main {
     height: calc((100vw - 90px) / 2);
     background-size: cover;
     cursor: pointer;
-    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 3px 3px 15px black;
 }
 .music-art:hover .layover {
     opacity: 1;
+    border-radius: 4px;
 }
 .music-art .layover {
     background-color: rgba(0,0,0,0.5);
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     opacity: 0;
 }
+.favorite-artist .layover {
+    background-color: transparent;
+}
+.favorite-artist .music-art {
+    box-shadow: 5px 5px 25px black;
+}
+.favorite-artist .card:hover {
+    background-color: rgba(255,255,255,0.1);
+}
 .card i {
-    font-size: 30px;
+    font-size: 20px;
     color: white;
 }
 .card .play-circle {
-    height: 50px;
-    width: 50px;
-    border: 5px solid white;
+    height: 20%;
+    width: 20%;
+    background-color: rgb(28,215,96);
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 5%;
+    box-shadow: 3px 3px 15px black;
 }
 #recent-cube1 {
-    background-image: url(../img/metal_lifting.jpg);
+    background-image: url(../img/hybrid.jpg);
 }
 #recent-cube2 {
-    background-image: url(../img/stranger.jpeg);
+    background-image: url(../img/trench.png);
 }
 #recent-cube3 {
-    background-image: url(../img/aquietplace.jpeg);
+    background-image: url(../img/billie_album.png);
 }
 #recent-cube4 {
-    background-image: url(../img/split.jpeg);
+    background-image: url(../img/panic.jpeg);
 }
 #recent-cube5 {
-    background-image: url(../img/cure.jpeg);
+    background-image: url(../img/blanco.jpeg);
 }
 #recent-cube6 {
-    background-image: url(../img/sinister.jpeg);
+    background-image: url(../img/muse.jpeg);
 }
 #user-cube1 {
     background-image: url(../img/radar.jpeg);
@@ -245,21 +263,30 @@ main {
 #user-cube2 {
     background-image: url(../img/mixdaily.jpeg);
 }
-.popular .music-art {
+.favorite-artist .music-art {
     border-radius: 100%;
 }
 #artist-circle1 {
-    background-image: url(../img/youg.jpeg);
+    background-image: url(../img/linkin.jpeg);
 }
 #artist-circle2 {
-    background-image: url(../img/einaudi.jpeg);
+    background-image: url(../img/twenty.png);
+}
+#artist-circle3 {
+    background-image: url(../img/neighbourhood.jpeg);
+}
+#artist-circle4 {
+    background-image: url(../img/shinoda.jpeg);
+}
+#artist-circle5 {
+    background-image: url(../img/billie.jpeg);
 }
 
 /* footer */
 footer {
     width: 100%;
     height: 60px;
-    background-color: rgb(40,40,40);
+    background-color: rgb(24,24,24);
     position: fixed;
     z-index: 1;
     display: flex;
@@ -289,20 +316,28 @@ footer {
 .song-playing .song-art {
     min-width: 20px;
     height: 20px;
-    background-image: url(../img/sinister.jpeg);
+    background-image: url(../img/minutes.jpeg);
+    background-size: cover;
     margin-right: 5px;
     cursor: pointer;
 }
 .song-info {
     flex: 1;
+    overflow: hidden;
 }
 .song-info h4 {
     color: white;
     cursor: pointer;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .song-info h5 {
     font-size: 10px;
     cursor: pointer;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .song-info h5:hover {
     text-decoration: underline;
@@ -327,15 +362,36 @@ footer {
     align-items: center;
     margin-bottom: 7px;
 }
-.player-commands i, .options i {
-    color: white;
+.player-commands i {
+    color: grey;
+}
+.player-commands .selected {
+    position: relative;
+}
+.selected span {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 20px;
+    cursor: pointer;
+}
+.player-commands .selected i, .selected span {
+    color: rgb(28,215,96);
 }
 .player-commands .play-circle {
-    height: 22px;
-    width: 22px;
-    border: 2px solid white;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
     border-radius: 100%;
     cursor: pointer;
+}
+.player-commands .play-circle i {
+    color: black;
+    font-size: 10px;
 }
 .player-commands .play-circle:hover {
     scale: 1.1;
@@ -399,6 +455,7 @@ footer {
 }
 .options i {
     padding: 0 3px;
+    color: white;
 }
 .options .volume {
     flex: 1;
@@ -463,6 +520,7 @@ footer {
     }
     .playlist {
         display: block;
+        margin-top: 15px;
     }
     .playlist h3 {
         text-transform: uppercase;
@@ -496,7 +554,7 @@ footer {
     }
     .playlist-list {
         overflow-y: auto;
-        height: calc(100vh - 410px);
+        height: calc(100vh - 420px);
     }
     .playlist-list li {
         list-style: none;
@@ -583,6 +641,13 @@ footer {
     }
     .card .music-art {
         height: calc((100vw - 260px) / 4);
+    }
+    .card i {
+        font-size: 16px;
+    }
+    .card .play-circle {
+        height: 25%;
+        width: 25%;
     }
 }
 
