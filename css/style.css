@@ -9,7 +9,7 @@
 }
 body {
     min-width: 320px;
-    background-color: rgb(20,25,34);
+    background: linear-gradient(rgb(20,25,34), rgb(0,0,0,0.97) 100%);
 }
 a {
     text-decoration: none;
@@ -151,6 +151,9 @@ main {
     padding: 0 7px;
     padding-top: 10px;
     cursor: pointer;
+}
+.music-menu li:first-of-type a{
+    color: white;
 }
 .music-menu .underline {
     margin: auto;
