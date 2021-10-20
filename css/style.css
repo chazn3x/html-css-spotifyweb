@@ -48,7 +48,7 @@ i {
     width: 100%;
     height: calc(100vh - 60px);
     display: flex;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 /* side bar */
@@ -710,6 +710,22 @@ footer {
     }
 }
 
+/* x-small view landscape */
+@media screen and (max-width: 575px) and (max-height: 320px) {
+    .sidebar .menu img {
+        width: 24px;
+    }
+    .sidebar .menu li {
+        padding: 5px 13px;
+    }
+}
+
+/* other views landscape */
+@media screen and (max-height: 430px) {
+    .sidebar {
+        overflow-y: auto;
+    }
+}
 
 
 /* debug */
