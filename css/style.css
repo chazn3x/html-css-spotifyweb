@@ -445,7 +445,17 @@ footer {
     margin: 0 5px;
 }
 .player-bar .bar-filler {
-    width: 20%;
+    animation: bar-progress 10s linear infinite;
+}
+@keyframes bar-progress {
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+.player-bar .blink {
+    animation: blink 1s step-start 0s infinite;
+}
+@keyframes blink {
+    50% {opacity: 0;}
 }
 .footer-right {
     justify-content: flex-end;
@@ -635,7 +645,7 @@ footer {
         margin-right: 10px;
     }
     @media screen and (max-width: 991px) {
-        .card:nth-of-type(4) {
+        .card:nth-of-type(4n+0) {
             margin-right: 0;
         }
     }
@@ -660,7 +670,7 @@ footer {
         max-width: 181px;
         margin-right: 10px;
     }
-    .card:last-of-type {
+    .card:nth-of-type(6n+0) {
         margin-right: 0;
     }
     .card .music-art {
