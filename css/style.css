@@ -6,6 +6,7 @@
     color: grey;
     font-family: 'Ubuntu', sans-serif;
     transition: 0.2s;
+    cursor: default;
 }
 body {
     min-width: 320px;
@@ -13,6 +14,7 @@ body {
 }
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 h2 {
     color: white;
@@ -81,6 +83,7 @@ main {
     width: 20px;
     background-color: grey;
     border-radius: 100%;
+    cursor: pointer;
 }
 .main-top .user {
     display: flex;
@@ -93,6 +96,7 @@ main {
 }
 .main-top .user span {
     font-size: 12px;
+    cursor: pointer;
 }
 .main-top #upgrade-btn {
     font-size: 14px;
@@ -199,6 +203,7 @@ main {
     justify-content: flex-end;
     align-items: flex-end;
     opacity: 0;
+    cursor: pointer;
 }
 .favorite-artist .layover {
     background-color: transparent;
@@ -223,6 +228,7 @@ main {
     justify-content: center;
     margin: 5%;
     box-shadow: 3px 3px 15px black;
+    cursor: pointer;
 }
 .card .play-circle:hover {
     scale: 1.1;
@@ -418,6 +424,7 @@ footer {
     width: 100%;
     height: 3px;
     background-color: rgb(70,70,70);
+    cursor: pointer;
     border-radius: 1px;
 }
 .small-view-bottom .bar-filler {
@@ -425,6 +432,7 @@ footer {
     height: 100%;
     background-color: white;
     animation: bar-progress 10s linear infinite;
+    cursor: pointer;
 }
 .small-view-bottom .bar-circle-border {
     display: flex;
@@ -436,6 +444,7 @@ footer {
     right: -8px;
     top: -8px;
     border-radius: 100%;
+    cursor: pointer;
     background-color: transparent;
 }
 .small-view-bottom .bar-circle {
@@ -443,6 +452,7 @@ footer {
     height: 9px;
     border-radius: 100%;
     background-color: #fff;
+    cursor: pointer;
 }
 .small-view-bottom .player-bar:hover .bar-circle-border {
     background-color: rgba(255,255,255,0.2);
@@ -484,6 +494,7 @@ footer {
     border-radius: 100%;
     display: flex;
     justify-content: center;
+    cursor: pointer;
     align-items: center;
 }
 .commands .icon:nth-child(3):hover {
@@ -559,11 +570,14 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    cursor: default;
 }
 .footer-menu-small img {
+    cursor: pointer;
     height: 20px;
 }
 .footer-menu-small span {
+    cursor: pointer;
     font-size: 10px;
 }
 .small-bar {
