@@ -620,6 +620,9 @@ footer:hover .small-bar-filler{
         margin: 8px;
         cursor: pointer;
     }
+    #small-logo {
+        cursor: pointer;
+    }
     #big-logo {
         display: none;
     }
@@ -631,9 +634,11 @@ footer:hover .small-bar-filler{
     .sidebar .menu span {
         display: none;
         transition: 0.3s;
+        cursor: pointer;
     }
     .sidebar .menu img {
         width: 24px;
+        cursor: pointer;
     }
     .playlist {
         display: none;
@@ -646,9 +651,11 @@ footer:hover .small-bar-filler{
     .sidebar-bottom #install img {
         width: 20px;
         margin-right: 3px;
+        cursor: pointer;
     }
     .sidebar-bottom span {
         display: none;
+        cursor: pointer;
     }
 
     /* content */
@@ -778,14 +785,16 @@ footer:hover .small-bar-filler{
         height: 3px;
         flex: 1;
         border-radius: 1.5px;
-    }
+        cursor: pointer;
+}
     .bar-filler {
         background: white;
         height: 100%;
         border-radius: 1.5px;
         position: relative;
         transition: 0.1s;
-    }
+        cursor: pointer;
+}
     .bar-circle {
         position: absolute;
         right: -3px;
@@ -796,6 +805,7 @@ footer:hover .small-bar-filler{
         background-color: #fff;
         opacity: 0;
         transition: 0.1s;
+        cursor: pointer;
     }
     .player-bar:hover .bar-filler {
         background: rgb(28,215,96);
@@ -853,6 +863,7 @@ footer:hover .small-bar-filler{
     #big-logo {
         display: block;
         width: 130px;
+        cursor: pointer;
     }
     .sidebar .menu li, .sidebar-bottom {
         padding: 6px 20px;
@@ -911,6 +922,9 @@ footer:hover .small-bar-filler{
         font-weight: 500;
         text-align: center;
         margin-right: 8px;
+    }
+    .new-playlist span {
+        cursor: pointer;
     }
     .new-playlist:hover span:first-of-type {
         background-color: #fff;
